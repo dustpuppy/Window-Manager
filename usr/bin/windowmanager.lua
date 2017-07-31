@@ -24,7 +24,7 @@ local startMenuTable = {
   { ["name"] = "User Manager", ["path"] = "/usr/lib/windowmanager/programs/usermanager.lua", ["param"] = nil, ["level"] = 99, ["type"] = 0},
   { ["name"] = "Config Start Menu", ["path"] = "/usr/lib/windowmanager/programs/startmenu_config.lua", ["param"] = nil, ["level"] = 99, ["type"] = 0},
   { ["name"] = "Driver Info", ["path"] = "/usr/lib/windowmanager/programs/driverinfo.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
---  { ["name"] = "Program Frame", ["path"] = "/usr/lib/windowmanager/programs/program_frame.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
+  { ["name"] = "Terminal", ["path"] = "/usr/lib/windowmanager/programs/terminal.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
   { ["name"] = "Messenger", ["path"] = "/usr/lib/windowmanager/programs/messenger.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
   { ["name"] = "Card Reader", ["path"] = "/usr/lib/windowmanager/programs/cardreader.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
   { ["name"] = "Card Writer", ["path"] = "/usr/lib/windowmanager/programs/cardwriter.lua", ["param"] = nil, ["level"] = 0, ["type"] = 0},
