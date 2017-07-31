@@ -38,6 +38,17 @@ function sendCallback(self, win)
   gui.drawElement(window, messageInput)
 end
 
+function broadcastCallback(self, win)
+  local port = networkdriver.getPort("message")
+  local msg = gui.getElementText(messageInput)
+  local from = wm.getUsername()
+  if msg ~= "" then
+    networkdriver.modemBroadcast(port, msg, from)
+  end
+  gui.setElementText(messageInput, "")
+  gui.drawElement(window, messageInput)
+end
+
 window = wm.newWindow(math.floor(ScreenWidth/2) - math.floor(windowWidth/2), math.floor(screenHeight/2) - math.floor(windowHeight/2), windowWidth, windowHeight, ProgramName)
 wm.disableWindowButtons(window, true)
 
@@ -64,7 +75,10 @@ wm.addElement(window, messageInput)
 local SendButton = gui.newButton(2, windowHeight - 1, 6, 1, "send", sendCallback)
 wm.addElement(window, SendButton)
 
-local CloseButton = gui.newButton(20, windowHeight - 1, 7, 1, "close", function() if myID > 0 then wm.exitProgram(myID) end wm.exitProgram(myID) wm.closeWindow(window) end)
+local broadcastButton = gui.newButton(9, windowHeight - 1, 11, 1, "broadcast", broadcastCallback)
+wm.addElement(window, broadcastButton)
+
+local CloseButton = gui.newButton(21, windowHeight - 1, 7, 1, "close", function() if myID > 0 then wm.exitProgram(myID) end wm.exitProgram(myID) wm.closeWindow(window) end)
 wm.addElement(window, CloseButton)
 
 wm.raiseWindow(window)
